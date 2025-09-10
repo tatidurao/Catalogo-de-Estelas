@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mundo das Estrelas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="#" class="nav-link active-link" onclick="showSection('size')">Tamanho das Estrelas 🌟</a>
+        <a href="#" class="nav-link" onclick="showSection('magnitude')">Alta Magnitude ✨</a>
+        <a href="#" class="nav-link" onclick="showSection('hot')">Estrelas Mais Quentes 🔥</a>
+    </nav>
+</header>
+<main class="container">
+    <section id="sizeSection" class="section" style="display:block;">
+        <h2>Tamanho das Estrelas</h2>
+        <div class="grid" id="sizeGrid"></div>
+    </section>
+    <section id="magnitudeSection" class="section">
+        <h2>Estrelas com Alta Magnitude</h2>
+        <div class="grid" id="magnitudeGrid"></div>
+    </section>
+    <section id="hotSection" class="section">
+        <h2>Estrelas Mais Quentes</h2>
+        <div class="grid" id="hotGrid"></div>
+    </section>
+</main>
+<div class="modal" id="starModal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <div id="starDetails"></div>
+    </div>
+</div>
+<footer>Projeto modificado por Tátila Durao</footer>
+<script src="stars.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

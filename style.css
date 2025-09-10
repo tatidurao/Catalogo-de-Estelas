@@ -1,0 +1,214 @@
+/* Estilos Gerais e de Fundo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom, #000428, #004e92); /* Gradiente escuro e profundo */
+    color: #e0e0e0; /* Cor de texto clara */
+    line-height: 1.6;
+}
+
+/* Cabeçalho e Navegação */
+header {
+    background: linear-gradient(90deg, #000428, #004e92, #2c5364); /* Gradiente vibrante */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra mais suave */
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #5d9cec; /* Linha de destaque */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espaçamento entre os links */
+    flex-wrap: wrap; /* Para responsividade em telas menores */
+}
+
+.nav-link {
+    font-family: 'Orbitron', sans-serif; /* Fonte futurista para navegação */
+    font-size: 1.15rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    letter-spacing: 0.5px; /* Espaçamento entre letras */
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Efeito hover sutil */
+    transform: translateY(-3px); /* Leve elevação */
+    box-shadow: 0 6px 12px rgba(93, 156, 236, 0.3); /* Sombra azulada no hover */
+}
+
+.active-link {
+    border-bottom: 3px solid #5d9cec; /* Destaque mais forte para link ativo */
+    font-weight: bold;
+    transform: translateY(-2px); /* Leve elevação para o ativo */
+}
+
+/* Container Principal */
+.container {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 30px auto; /* Centraliza o conteúdo com espaço */
+    padding: 0 20px; /* Padding lateral */
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #5d9cec; /* Cor de destaque para títulos */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Sombra para legibilidade */
+}
+
+/* Seções de Conteúdo */
+.section {
+    display: none; /* Inicialmente escondido */
+    animation: fadeIn 1s ease-in-out forwards; /* Animação de fade-in */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Grid de Cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Cards um pouco maiores */
+    gap: 25px; /* Espaçamento maior entre os cards */
+    padding: 20px;
+}
+
+.card {
+    background: rgba(26, 38, 59, 0.3); /* Fundo ligeiramente mais escuro para o card */
+    border-radius: 12px; /* Bordas mais arredondadas */
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinha o conteúdo */
+}
+
+.card:hover {
+    transform: scale(1.06); /* Efeito de zoom um pouco maior */
+    box-shadow: 0 10px 20px rgba(93, 156, 236, 0.4); /* Sombra azulada e maior */
+    background: rgba(44, 83, 100, 0.4); /* Fundo que muda no hover */
+}
+
+.card img {
+    width: 100%;
+    height: 140px; /* Altura maior para as imagens */
+    object-fit: contain;
+    background: #0d1b2a; /* Fundo escuro para a imagem */
+    border-radius: 7px;
+    padding: 8px;
+    margin-bottom: 15px; /* Espaço abaixo da imagem */
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5); /* Sombra interna sutil */
+}
+
+.card h3 {
+    margin-top: 5px;
+    margin-bottom: 8px;
+    font-size: 1.3rem; /* Título um pouco maior */
+    color: #fff;
+    font-weight: 500;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8); /* Texto do tipo um pouco mais suave */
+    margin: 0;
+}
+
+/* Modal de Detalhes */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 15, 20, 0.9); /* Fundo mais escuro e translúcido */
+    backdrop-filter: blur(5px); /* Efeito de blur */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que o modal fique por cima */
+    overflow-y: auto; /* Permite scroll se o conteúdo for muito grande */
+}
+
+.modal-content {
+    background: #1b263b; /* Fundo do modal */
+    padding: 30px;
+    border-radius: 15px; /* Bordas arredondadas */
+    max-width: 580px; /* Largura máxima do modal */
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Sombra mais forte */
+    border: 1px solid rgba(93, 156, 236, 0.3); /* Borda sutil azulada */
+    animation: modalFadeIn 0.4s ease-out forwards; /* Animação de entrada do modal */
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 1.8em; /* Tamanho maior do botão de fechar */
+    font-weight: normal;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #fff; /* Cor branca no hover */
+}
+
+.star-name {
+    font-size: 2rem; /* Título do nome da estrela bem grande */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.6);
+}
+
+.modal-content img {
+    width: 220px; /* Imagem no modal um pouco maior */
+    display: block;
+    margin: 0 auto 20px auto; /* Centraliza e adiciona espaço abaixo */
+    border-radius: 10px;
+    padding: 10px;
+    background: #0d1b2a;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.7);
+}
+
+.star-data {
+    margin: 10px 0;
+    font-size: 1.1rem; /* Tamanho de fonte maior para os dados */
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.star-data b {
+    color: #5d9cec; /* Cor de destaque para os rótulos */
+    margin-right: 8px;
+    font-weight: 500;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(10, 15, 20, 0.6); /* Fundo semitransparente */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3); /* Sombra superior sutil */
+    z-index: 999; /* Fica acima de alguns elementos, mas abaixo do modal */
+}
